@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "bill_type": "electricity",
+      "icon": "https://i.postimg.cc/52dvsbB0/desco.png",
+      "organization": "DESCO",
+      "amount": 1890,
+      "due-date": "2025-03-22T06:57:58.110Z"
+    },
+    {
+      "id": 2,
+      "bill_type": "electricity",
+      "icon": "https://i.postimg.cc/BZRMGW5W/nesco.png",
+      "organization": "NESCO",
+      "amount": 1245,
+      "due-date": "2025-03-25T06:57:58.110Z"
+    },
+    {
+      "id": 3,
+      "bill_type": "water",
+      "icon": "https://i.postimg.cc/VN5C6v1K/wasa.png",
+      "organization": "WASA",
+      "amount": 980,
+      "due-date": "2025-03-30T06:57:58.110Z"
+    },
+    {
+      "id": 4,
+      "bill_type": "gas",
+      "icon": "https://i.postimg.cc/6QSGGKpt/titas.png",
+      "organization": "Titas",
+      "amount": 1488,
+      "due-date": "2025-03-28T06:57:58.110Z"
+    }
+  ]
+  
