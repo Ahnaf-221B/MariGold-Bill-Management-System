@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Bills from "../pages/Bills/Bills";
 import BillsCard from "../pages/BillsCard/BillsCard";
+import BillsDetails from "../pages/BillsDetails/BillsDetails";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,11 @@ export const router = createBrowserRouter([
       {
         path: "/bills",
         element: <Bills></Bills>,
+        loader : () => fetch("/data.json")
+      },
+      {
+        path: "/billsdetails/:id",
+        element: <BillsDetails></BillsDetails>,
         loader : () => fetch("/data.json")
       }
    ]
