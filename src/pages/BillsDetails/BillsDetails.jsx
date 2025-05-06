@@ -16,12 +16,13 @@ const BillDetails = () => {
       <div className="bg-white p-8 shadow-xl rounded-lg flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
         
         
-        <div className="w-40 h-40 rounded-lg bg-blue-100 flex items-center justify-center p-2 ml-20">
+        <div className="relatve w-40 h-40 rounded-lg  flex items-center justify-center p-2 ml-20">
           <img
             src={bill.icon}
             alt={bill.organization}
             className="w-full h-full object-contain"
           />
+          <img className='absolute w-10 h-10 relative mt-20 mr-700px]' src={bill.icon1} />
         </div>
 
       
@@ -30,15 +31,16 @@ const BillDetails = () => {
           <p className="text-xl font-semibold text-gray-800"><span className='font-bold text-blue-700'>Bill Type : </span>  {bill.bill_type} Bill</p>
           <p className="text-xl font-semibold text-gray-700"><span className='font-bold text-blue-700'>Amount : </span>  ${bill.amount}</p>
           <p className="font-semibold text-xl"><span className='font-bold text-blue-700'>Due Date : </span>  {new Date(bill.due_date).toLocaleDateString()}</p>
-        </div>
-      </div>
-
-     
-      <div className="mt-8 flex justify-center">
-        <button className="px-8 py-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300 ease-in-out">
+        
+       
+        <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300 ease-in-out">
           Pay Bill
         </button>
       </div>
+      </div>
+
+     
+     
 
       {/* Back Button */}
       <div className="mt-4 text-center">
