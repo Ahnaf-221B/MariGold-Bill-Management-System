@@ -27,29 +27,11 @@ const Bills = () => {
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold text-blue-800 mb-8">Your Bills</h2>
 
-        {/* Table Layout */}
-        <div className="overflow-x-auto">
-          <table className="min-w-full bg-white shadow-md rounded-lg text-center">
-            {/* Table Header */}
-            <thead className="bg-blue-100">
-              <tr>
-                <th className="py-3 px-4 text-center font-semibold text-blue-700">Icon</th>
-                <th className="py-3 px-4 text-center font-semibold text-blue-700">Organization</th>
-                <th className="py-3 px-4 text-center font-semibold text-blue-700">Bill Type</th>
-                <th className="py-3 px-4 text-center font-semibold text-blue-700">Amount</th>
-                <th className="py-3 px-4 text-center font-semibold text-blue-700">Due Date</th>
-                <th className="py-3 px-4 text-center font-semibold text-blue-700">Action</th>
-                <th className="py-3 px-4 text-center font-semibold text-blue-700">Paid</th>
-              </tr>
-            </thead>
-
-            {/* Table Body */}
-            <tbody>
-              {filteredBills.map((bill) => (
-                <BillCard key={bill.id} bill={bill} user={user} />
-              ))}
-            </tbody>
-          </table>
+        {/* Card Layout (Single Column for Mobile, Grid for Tablet/PC) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+          {filteredBills.map((bill) => (
+            <BillCard key={bill.id} bill={bill} user={user} />
+          ))}
         </div>
       </div>
     </section>

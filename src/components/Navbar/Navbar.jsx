@@ -40,7 +40,7 @@ const Navbar = () => {
     <header className="bg-blue-50 shadow-md py-4 px-6 sm:px-10 md:px-20 flex justify-between items-center relative">
       {/* Left: Logo & Company Name */}
       <div className="flex items-center space-x-2">
-        <img src={logo} alt="logo" className="w-12 h-12 rounded-full" />
+        <img src={logo} alt="logo" className="hidden w-12 h-12 rounded-full" />
         <span className="text-xl md:text-3xl font-bold text-blue-700">
           Marigold
         </span>
@@ -61,7 +61,7 @@ const Navbar = () => {
           mobileMenuOpen ? "block" : "hidden"
         } sm:block`}
       >
-        <div className="md:flex md:fle-col md:gap-6">
+        <div className="md:flex md:flex-col md:gap-6">
         <Link to="/" className="hover:text-blue-600 py-2 px-3">
         
           Home

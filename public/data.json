@@ -44,6 +44,15 @@
       "organization": "Link3",
       "amount": 1200, 
       "due_date": "2025-05-28T06:57:58.110Z"
+    },
+    {
+      "id": 6,
+      "bill_type": "atmcard",
+      "icon": "https://i.postimg.cc/HWR9Mkk6/agrani-bank-limited-logo-png-seeklogo-441688.png",
+      "icon1": "https://i.postimg.cc/vBDHRYMg/atmcard.jpg",
+      "organization": "AgraniBank",
+      "amount": 2000, 
+      "due_date": "2025-06-20T06:57:58.110Z"
     }
   ]
   

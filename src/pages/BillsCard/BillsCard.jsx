@@ -6,59 +6,44 @@ const BillCard = ({ bill, user }) => {
   const isPaid = localStorage.getItem(`bill_${user?.uid}_${bill.id}_paid`);
 
   return (
-    <tr className="border-t ">
-      <td className="py-3 px-4 text-center sm:text-left ">
-        <div className="flex items-center justify-center sm:justify-start">
-          <img
-            src={bill.icon}
-            alt={bill.organization}
-            className="w-12 h-12 mx-auto object-contain"
-          />
-        </div>
-      </td>
+    <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center space-y-4">
+      {/* Bill Icon */}
+      <img
+        src={bill.icon}
+        alt={bill.organization}
+        className="w-20 h-20 object-contain"
+      />
+      <div>
+        <img className="w-6 h-6 mt-[-45px] ml-[100px]" src={bill.icon1} alt="" />
+      </div>
 
-      <td className="py-3 px-4 text-blue-800  text-center sm:text-left">
-        <div className="text-center">{bill.organization}</div>
-      </td>
+      {/* Bill Info */}
+      <div className="text-center">
+        <h3 className="text-xl font-semibold text-blue-800">{bill.organization}</h3>
+        <p className="text-lg text-gray-600">{bill.bill_type}</p>
+        <p className="text-xl font-bold text-gray-800">${bill.amount}</p>
+        <p className="text-md text-gray-500">
+          Due Date: {new Date(bill.due_date).toLocaleDateString()}
+        </p>
+      </div>
 
-      <td className="py-3 px-4 text-center sm:text-left">
-        <div className="text-center">{bill.bill_type}</div>
-      </td>
+      {/* Action Button */}
+      <Link
+        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+        to={`/billsdetails/${bill.id}`}
+      >
+        See Details
+      </Link>
 
-      <td className="py-3 px-4 font-bold text-gray-800 text-center sm:text-left">
-        <div className="text-center">${bill.amount}</div>
-      </td>
-
-      <td className="py-3 px-4 font-bold text-gray-800 text-center sm:text-left">
-      
-              <div className="text-center"> {new Date(bill.due_date).toLocaleDateString()}</div>
-             
-           
-      </td>
-
-      <td className="items-center text-center sm:text-left flex md:mt-5 justify-center">
-        <Link
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-          to={`/billsdetails/${bill.id}`}
-        >
-          See Details
-        </Link>
-      </td>
-
-      <td className="py-3 px-4 text-center sm:text-left items-center justify-center">
-        <div className=" justify-center flex">
-           {isPaid && (
-         
-            <span role="img" aria-label="tick" className="text-green-500 ">
-            <FaCheckCircle   size={20} />
+      {/* Paid Status */}
+      <div className="flex justify-center">
+        {isPaid && (
+          <span role="img" aria-label="tick" className="text-green-500">
+            <FaCheckCircle size={20} />
           </span>
-         
-          
         )}
-        </div>
-       
-      </td>
-    </tr>
+      </div>
+    </div>
   );
 };
 
