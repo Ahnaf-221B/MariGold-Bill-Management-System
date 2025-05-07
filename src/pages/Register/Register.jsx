@@ -5,6 +5,7 @@ import { FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthContext";
+import { Bounce, toast } from "react-toastify";
 
 const Register = () => {
 	
@@ -13,7 +14,7 @@ const Register = () => {
   const [showpass, setshowpass] = useState(false);
 const location = useLocation()
 const navigate = useNavigate()
-  const {createUser,registerGoogle} =use(AuthContext);
+  const {createUser,registerGoogle,updateUser} =use(AuthContext);
 
 
   const handleRegister = (e) => {
@@ -24,14 +25,77 @@ const navigate = useNavigate()
     const pass = e.target.password.value;
    
     console.log(name,photo,email, pass);
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (!passwordRegex.test(pass)) {
+      toast.error("Password must be at least 6 characters, include uppercase, lowercase, and a number.", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      return;
+    }
 
 	createUser(email,pass)
 		.then(result =>{
 			console.log(result),
+
+      updateUser({
+        displayName: name,
+        photoURL: photo,
+      })
+        .then(() => {
+          toast.success("User registered successfully!", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+          
+          toast.error(`Profile update failed: ${err.message}`, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
+          
+        });
+
+
+      
 			navigate(`${location.state? location.state : "/"}`)
 			
 		}).catch(error =>{
 			console.log(error);
+      toast.error(`Registration failed: ${error.message}`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
 			
 		})
   };
@@ -39,6 +103,17 @@ const navigate = useNavigate()
  const handleGoogleLogin =() =>{
 	registerGoogle().then(result =>{
 		console.log(result);
+    toast.success('Log in with google successful', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+      });
 		navigate(`${location.state? location.state : "/"}`)
 		
 	}).catch(error =>{
@@ -112,8 +187,7 @@ const navigate = useNavigate()
               required
               placeholder="Password"
               minlength="8"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-              title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+             
             />
             <button
               onClick={() => {
@@ -172,7 +246,7 @@ const navigate = useNavigate()
               ></path>
             </g>
           </svg>
-          Register with Google
+          Login with Google
         </button>
       </form>
       <p className="pt-5 pb-5">

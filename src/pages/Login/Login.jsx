@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthContext";
-
+import { toast,Bounce } from "react-toastify";
 const Login = () => {
   const location = useLocation();  // Get the location where the user came from
   const navigate = useNavigate();  // Navigation hook to navigate programmatically
@@ -16,10 +16,31 @@ const Login = () => {
     signInUser(email, pass)
       .then((result) => {
         console.log(result);
-       
+        toast.success('Log in successful', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+          });
         navigate(`${location.state? location.state : "/"}`)
       })
       .catch((error) => {
+        toast.warn('Invalid mail or password', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+          });
         console.log(error);
       
       });
@@ -30,9 +51,32 @@ const Login = () => {
     registerGoogle() 
       .then((result) => {
         console.log(result);
+        
+        toast.success('Log in successful', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+          });
         navigate(`${location.state? location.state : "/"}`)
       })
       .catch((error) => {
+        toast.error(`Google login failed: ${error.message}`, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
         console.log(error);
         
       });

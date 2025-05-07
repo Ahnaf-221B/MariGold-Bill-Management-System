@@ -58,7 +58,9 @@ const BillDetails = () => {
               className="w-full h-full object-contain"
             />
           </div>
-
+          <div className="absolute mt-25 ml-60">
+            <img className="w-8 h-8 md:w-10 md:h-10  md:mr-[700px] md:mt-[60px]" src={bill.icon1} alt="" />
+          </div>
           <div className="w-1/3 text-left space-y-4">
             <h3 className="text-2xl font-semibold">
               <span className="font-bold text-blue-700">Organization: </span>

@@ -35,6 +35,15 @@
       "organization": "Titas",
       "amount": 1488,
       "due_date": "2025-03-28T06:57:58.110Z"
+    },
+    {
+      "id": 5,
+      "bill_type": "internet",
+      "icon": "https://i.postimg.cc/W49Bg0ZC/Link3.png",
+      "icon1": "https://i.postimg.cc/gJV31HKB/wifi.jpg",
+      "organization": "Link3",
+      "amount": 1200, 
+      "due_date": "2025-05-28T06:57:58.110Z"
     }
   ]
   
