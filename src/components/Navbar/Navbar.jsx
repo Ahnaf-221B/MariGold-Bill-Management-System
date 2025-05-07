@@ -61,7 +61,7 @@ const Navbar = () => {
           mobileMenuOpen ? "block" : "hidden"
         } sm:block`}
       >
-        <div className="md:flex md:flex-col md:gap-6">
+        <div className="md:flex  md:gap-6">
         <Link to="/" className="hover:text-blue-600 py-2 px-3">
         
           Home
@@ -144,11 +144,13 @@ const Navbar = () => {
                 onClick={toggleDropdown}
                 className="flex items-center space-x-2"
               >
-                <img
+                <Link to="/profile"><img
                   src={user.photoURL || "https://via.placeholder.com/40"}
                   alt="User Profile"
                   className="w-10 h-10 rounded-full"
                 />
+                </Link>
+                
               </button>
               {dropdownOpen && (
                 <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-lg w-60 h-auto z-50">
