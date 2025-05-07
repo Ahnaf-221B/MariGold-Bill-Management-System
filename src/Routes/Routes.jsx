@@ -7,6 +7,8 @@ import Register from "../pages/Register/Register";
 import Bills from "../pages/Bills/Bills";
 import BillsCard from "../pages/BillsCard/BillsCard";
 import BillsDetails from "../pages/BillsDetails/BillsDetails";
+import PrivateRoute from "../provider/PrivateRoute";
+import MyProfile from "../pages/MyProfile/MyProfile";
 
 export const router = createBrowserRouter([
   {
@@ -17,7 +19,7 @@ export const router = createBrowserRouter([
    children: [
     {
         index: true,
-        path : "/",
+      
         element  : <Home></Home>
     },
     {
@@ -30,13 +32,16 @@ export const router = createBrowserRouter([
       },
       {
         path: "/bills",
-        element: <Bills></Bills>,
+        element: (<PrivateRoute><Bills></Bills></PrivateRoute>),
         loader : () => fetch("/data.json")
       },
       {
         path: "/billsdetails/:id",
-        element: <BillsDetails></BillsDetails>,
+        element: (<PrivateRoute><BillsDetails></BillsDetails></PrivateRoute>),
         loader : () => fetch("/data.json")
+      },{
+        path: "/profile",
+        element:(<PrivateRoute><MyProfile></MyProfile></PrivateRoute>),
       }
    ]
   }

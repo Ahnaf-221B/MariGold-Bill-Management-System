@@ -33,7 +33,7 @@ const Banner = () => {
           },
           // When screen width is 768px or less (tablet)
           768: {
-            slidesPerView: 2,  // Show 2 slides per view on tablet
+            slidesPerView: 1,  // Show 2 slides per view on tablet
             spaceBetween: 20,  // Adjust space between slides
           },
           // When screen width is 1024px or more (PC)
@@ -142,26 +142,38 @@ const Banner = () => {
     </div>
   </div>
   
-  <div className="container mx-auto text-center mt-22 inset-shadow-sm p-10 rounded-lg shadow-lg ">
-    <h2 className="text-3xl font-bold text-blue-800 mb-8 underline">Customer Reviews</h2>
-    <div className="flex justify-between gap-6">
-      <div className="review-item bg-blue-50 p-6 rounded-lg shadow-md max-w-sm">
-        <p className="text-lg text-gray-700 mb-4">"This platform is so easy to use! I can pay all my bills from one place in just a few clicks!"</p>
-        <p className="font-semibold text-blue-700">John Doe</p>
-        <span className="text-gray-500">Happy Customer</span>
-      </div>
-      <div className="review-item bg-blue-50 p-6 rounded-lg shadow-md max-w-sm">
-        <p className="text-lg text-gray-700 mb-4">"I love the fact that I can manage all my payments in one place. It saves so much time!"</p>
-        <p className="font-semibold text-blue-700">Jane Smith</p>
-        <span className="text-gray-500">Loyal User</span>
-      </div>
-      <div className="review-item bg-blue-50 p-6 rounded-lg shadow-md max-w-sm">
-        <p className="text-lg text-gray-700 mb-4">"No more waiting in long queues at utility offices. I can pay everything online now!"</p>
-        <p className="font-semibold text-blue-700">Emily Brown</p>
-        <span className="text-gray-500">Satisfied Customer</span>
-      </div>
+  <div className="container mx-auto text-center mt-22 inset-shadow-sm p-10 rounded-lg shadow-lg">
+  <h2 className="text-3xl font-bold text-blue-800 mb-8 underline">Customer Reviews</h2>
+  <div className="flex flex-wrap justify-center gap-6">
+    {/* Review Item 1 */}
+    <div className="review-item bg-blue-50 p-6 rounded-lg shadow-md max-w-sm w-full sm:w-80">
+      <p className="text-lg text-gray-700 mb-4">
+        "This platform is so easy to use! I can pay all my bills from one place in just a few clicks!"
+      </p>
+      <p className="font-semibold text-blue-700">John Doe</p>
+      <span className="text-gray-500">Happy Customer</span>
+    </div>
+
+    {/* Review Item 2 */}
+    <div className="review-item bg-blue-50 p-6 rounded-lg shadow-md max-w-sm w-full sm:w-80">
+      <p className="text-lg text-gray-700 mb-4">
+        "I love the fact that I can manage all my payments in one place. It saves so much time!"
+      </p>
+      <p className="font-semibold text-blue-700">Jane Smith</p>
+      <span className="text-gray-500">Loyal User</span>
+    </div>
+
+    {/* Review Item 3 */}
+    <div className="review-item bg-blue-50 p-6 rounded-lg shadow-md max-w-sm w-full sm:w-80">
+      <p className="text-lg text-gray-700 mb-4">
+        "No more waiting in long queues at utility offices. I can pay everything online now!"
+      </p>
+      <p className="font-semibold text-blue-700">Emily Brown</p>
+      <span className="text-gray-500">Satisfied Customer</span>
     </div>
   </div>
+</div>
+
 
   <div className="container mx-auto text-center mt-20">
     <h2 className="text-3xl font-bold text-blue-800 mb-8 underline">Contact Us</h2>

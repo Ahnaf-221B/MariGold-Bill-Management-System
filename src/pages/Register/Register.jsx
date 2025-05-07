@@ -3,7 +3,7 @@ import React, { useContext,use } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthContext";
 
 const Register = () => {
@@ -11,8 +11,8 @@ const Register = () => {
 //   const [success, setsuccess] = useState(false);
 //   const [errormsg, seterrormsg] = useState("");
   const [showpass, setshowpass] = useState(false);
-
-
+const location = useLocation()
+const navigate = useNavigate()
   const {createUser,registerGoogle} =use(AuthContext);
 
 
@@ -27,7 +27,8 @@ const Register = () => {
 
 	createUser(email,pass)
 		.then(result =>{
-			console.log(result);
+			console.log(result),
+			navigate(`${location.state? location.state : "/"}`)
 			
 		}).catch(error =>{
 			console.log(error);
@@ -38,6 +39,7 @@ const Register = () => {
  const handleGoogleLogin =() =>{
 	registerGoogle().then(result =>{
 		console.log(result);
+		navigate(`${location.state? location.state : "/"}`)
 		
 	}).catch(error =>{
 		console.log(error);
@@ -46,10 +48,10 @@ const Register = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center pt-20 ">
+    <div className="flex flex-col items-center justify-center pt-15 ">
       <form
         action=""
-        className="flex flex-col gap-2 border-2 p-10  rounded-lg shadow-md"
+        className="flex flex-col gap-2 bg-base-200 border-2 p-4 rounded-lg shadow-md"
         onSubmit={handleRegister}
       >
         <legend className="fieldset-legend text-3xl">Registration</legend>
@@ -62,6 +64,7 @@ const Register = () => {
           className="input "
           placeholder="Enter your name"
           required
+          
         />
         <label className="text-xs" htmlFor="">
           Photo
