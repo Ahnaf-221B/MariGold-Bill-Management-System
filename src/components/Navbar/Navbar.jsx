@@ -11,7 +11,7 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedBillType, setSelectedBillType] = useState("all");
 
-  // Handle user sign out
+  
   const handleSignOut = () => {
     signOutUser()
       .then(() => {
@@ -27,26 +27,26 @@ const Navbar = () => {
   };
 
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen); // Toggle the mobile menu
+    setMobileMenuOpen(!mobileMenuOpen); 
   };
 
-  // Handle bill type selection
+ 
   const handleBillTypeChange = (billType) => {
     setSelectedBillType(billType);
     navigate(`/bills?billType=${billType}`);
   };
 
   return (
-    <header className="bg-blue-50 shadow-md py-4 px-6 sm:px-10 md:px-20 flex justify-between items-center relative">
-      {/* Left: Logo & Company Name */}
+    <header className="bg-blue-50 shadow-md py-4 px-4 md:px-20 flex justify-between items-center relative">
+     
       <div className="flex items-center space-x-2">
-        <img src={logo} alt="logo" className="sm:hidden md:block w-12 h-12 rounded-full" />
+        <img src={logo} alt="logo" className="hidden md:block w-12 h-12 rounded-full" />
         <span className="text-xl md:text-3xl font-bold text-blue-700">
           Marigold
         </span>
       </div>
 
-      {/* Mobile Menu Icon */}
+     
       <div className="sm:hidden flex items-center" onClick={toggleMobileMenu}>
         {mobileMenuOpen ? (
           <FaTimes size={24} className="text-blue-700" />
@@ -55,23 +55,21 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Center: Navigation Links (mobile hidden, desktop shown) */}
+     
       <nav
-        className={`flex  space-x-6 text-gray-700 font-medium  ${
+        className={`flex flex-col space-x-6 text-gray-700 font-medium  ${
           mobileMenuOpen ? "block" : "hidden"
         } sm:block`}
       >
-        <div className="md:flex  md:gap-6">
+        <div className="md:flex md:gap-6">
         <Link to="/" className="hover:text-blue-600 py-2 px-3">
         
           Home
         </Link>
-       <div>
-        
-       </div>
+      
         <Link
            
-            className="dropdown hover:text-blue-600 py-2 px-3"
+            className="dropdown hover:text-blue-600 py-2 px-5"
             to="/bills"
           >
             Bills 
@@ -119,7 +117,7 @@ const Navbar = () => {
        
       </nav>
 
-      {/* Right: Auth Buttons */}
+     
       <div className="space-x-4 flex items-center">
         {!user ? (
           <>
@@ -138,7 +136,7 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            {/* Profile Icon and Dropdown */}
+           
             <div className="relative">
               <button
                 onClick={toggleDropdown}
