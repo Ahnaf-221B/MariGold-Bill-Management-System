@@ -103,6 +103,19 @@ const Navbar = () => {
               >
                 Gas
               </li>
+              <li
+                className="py-2 px-4 hover:bg-blue-100"
+                onClick={() => handleBillTypeChange("internet")}
+              >
+                Internet
+              </li>
+              <li
+                className="py-2 px-4 hover:bg-blue-100"
+                onClick={() => handleBillTypeChange("atmcard")}
+              >
+                Card
+              </li>
+
             </ul>
        
         

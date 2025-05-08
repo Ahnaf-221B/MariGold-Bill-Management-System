@@ -18,11 +18,11 @@ const BillCard = ({ bill, user }) => {
       </div>
 
       {/* Bill Info */}
-      <div className="text-center">
-        <h3 className="text-xl font-semibold text-blue-800">{bill.organization}</h3>
-        <p className="text-lg text-gray-600">{bill.bill_type}</p>
-        <p className="text-xl font-bold text-gray-800">${bill.amount}</p>
-        <p className="text-md text-gray-500">
+      <div className="text-center flex flex-col gap-y-3">
+        <h3 className="text-xl font-semibold text-blue-800"><span className="font-semibold text-md">Organization : </span>{bill.organization}</h3>
+        <p className="text-lg "><span className="font-semibold text-md">Bill Type : </span> {bill.bill_type}</p>
+        <p className="text-xl font-bold "><span className="font-semibold text-md">Amount : </span>${bill.amount}</p>
+        <p className="text-md  font-semibold">
           Due Date: {new Date(bill.due_date).toLocaleDateString()}
         </p>
       </div>

@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "bill_type": "electricity",
+      "bill_type": "Electricity",
       "icon": "https://res.cloudinary.com/di1xr30ta/image/upload/v1746638236/desco_lsuygq.png",
       "icon1" : "https://i.postimg.cc/N0kfDjLY/electric.png",
       "organization": "DESCO",
@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "bill_type": "electricity",
+      "bill_type": "Electricity",
       "icon": "https://res.cloudinary.com/di1xr30ta/image/upload/v1746638302/nesco_ihvbmh.png",
        "icon1" : "https://i.postimg.cc/N0kfDjLY/electric.png",
       "organization": "NESCO",
@@ -19,7 +19,7 @@
     },
     {
       "id": 3,
-      "bill_type": "water",
+      "bill_type": "Water",
       "icon": "https://res.cloudinary.com/di1xr30ta/image/upload/v1746638334/wasa_ltaeac.png",
       "icon1": "https://i.postimg.cc/4xZ39cNw/water.png",
 
@@ -29,7 +29,7 @@
     },
     {
       "id": 4,
-      "bill_type": "gas",
+      "bill_type": "Gas",
       "icon": "https://res.cloudinary.com/di1xr30ta/image/upload/v1746638357/titas_irdkjk.png",
       "icon1": "https://i.postimg.cc/SNbSB98q/gas.png",
       "organization": "Titas",
@@ -38,7 +38,7 @@
     },
     {
       "id": 5,
-      "bill_type": "internet",
+      "bill_type": "Internet",
       "icon": "https://res.cloudinary.com/di1xr30ta/image/upload/v1746638388/Link3_avqr14.png",
       "icon1": "https://i.postimg.cc/gJV31HKB/wifi.jpg",
       "organization": "Link3",
@@ -47,7 +47,7 @@
     },
     {
       "id": 6,
-      "bill_type": "atmcard",
+      "bill_type": "Atmcard",
       "icon": "https://res.cloudinary.com/di1xr30ta/image/upload/v1746638415/agrani-bank-limited-logo-png_seeklogo-441688_vrxcsv.png",
       "icon1": "https://i.postimg.cc/vBDHRYMg/atmcard.jpg",
       "organization": "AgraniBank",

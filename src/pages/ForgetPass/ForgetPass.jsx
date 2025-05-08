@@ -42,7 +42,7 @@ const ForgetPass = () => {
   };
 
   return (
-    <div className="hero bg-base-200 py-[10px] lg:py-[35.5px]">
+    <div className="hero bg-base-200 py-[10px] lg:py-[35.5px] mb-80">
        
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="card bg-base-100 w-sm shrink-0 shadow-2xl">
