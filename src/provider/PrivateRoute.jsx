@@ -10,15 +10,12 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
   console.log(location);
 
- 
 
   if (user && user?.email) {
     return children;
   }
   return <Navigate state={location.pathname} to="/login"></Navigate>;
 
-  //if-> user thake return children
-  // navigate--> Login
 };
 
 export default PrivateRoute;
